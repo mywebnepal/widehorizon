@@ -1,0 +1,11 @@
+plugin:
+    name: 'dipeshbanjade.jobdemand::lang.plugin.name'
+    description: 'dipeshbanjade.jobdemand::lang.plugin.description'
+    author: 'Dipesh Banjade'
+    icon: oc-icon-space-shuttle
+    homepage: ''
+navigation:
+    job-demand:
+        label: Demand
+        url: dipeshbanjade/jobdemand/jobdemand
+        icon: icon-hand-o-right

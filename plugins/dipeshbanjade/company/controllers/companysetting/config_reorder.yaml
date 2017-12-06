@@ -1,0 +1,4 @@
+title: CompanySetting
+modelClass: DipeshBanjade\Company\Models\CompanySetting
+toolbar:
+    buttons: reorder_toolbar

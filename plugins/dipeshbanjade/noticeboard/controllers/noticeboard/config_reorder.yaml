@@ -1,0 +1,4 @@
+title: NoticeBoard
+modelClass: DipeshBanjade\Noticeboard\Models\NoticeBoard
+toolbar:
+    buttons: reorder_toolbar

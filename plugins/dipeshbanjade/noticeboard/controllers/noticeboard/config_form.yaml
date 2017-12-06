@@ -1,0 +1,10 @@
+name: NoticeBoard
+form: $/dipeshbanjade/noticeboard/models/noticeboard/fields.yaml
+modelClass: DipeshBanjade\Noticeboard\Models\NoticeBoard
+defaultRedirect: dipeshbanjade/noticeboard/noticeboard
+create:
+    redirect: 'dipeshbanjade/noticeboard/noticeboard/update/:id'
+    redirectClose: dipeshbanjade/noticeboard/noticeboard
+update:
+    redirect: dipeshbanjade/noticeboard/noticeboard
+    redirectClose: dipeshbanjade/noticeboard/noticeboard

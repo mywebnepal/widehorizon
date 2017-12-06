@@ -1,0 +1,10 @@
+name: JobDemand
+form: $/dipeshbanjade/jobdemand/models/jobdemand/fields.yaml
+modelClass: DipeshBanjade\Jobdemand\Models\JobDemand
+defaultRedirect: dipeshbanjade/jobdemand/jobdemand
+create:
+    redirect: 'dipeshbanjade/jobdemand/jobdemand/update/:id'
+    redirectClose: dipeshbanjade/jobdemand/jobdemand
+update:
+    redirect: dipeshbanjade/jobdemand/jobdemand
+    redirectClose: dipeshbanjade/jobdemand/jobdemand

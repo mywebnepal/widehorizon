@@ -1,0 +1,19 @@
+{% if successMsg %}
+<div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {{ successMsg }}
+</div>
+<script>
+    $("#contactform")[0].reset();
+</script>
+{% endif  %}
+
+<script type="text/javascript">
+    $('.error-msg').remove();
+    var errors = {{ fieldMsgs|json_encode()|raw }};
+    $.each(errors, function(name, msg){
+        $('<div class="error-msg text-danger">' + msg + '</div>').insertAfter($('input[name=' + name + ']'));
+    })
+</script>

@@ -1,0 +1,11 @@
+plugin:
+    name: 'dipeshbanjade.noticeboard::lang.plugin.name'
+    description: 'dipeshbanjade.noticeboard::lang.plugin.description'
+    author: 'Dipesh Banjade'
+    icon: oc-icon-eye
+    homepage: ''
+navigation:
+    Notice-board:
+        label: Notice
+        url: dipeshbanjade/noticeboard/noticeboard
+        icon: icon-edit

@@ -1,0 +1,442 @@
+1512559684a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:9739:"title = "home"
+url = "/"
+layout = "static-layout"
+is_hidden = 0
+==
+<main id="main">
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section>
+        <div class="container">
+              <div class="row welcome-section">
+                <div class="col-sm-8 col-md-8 wow fadeInUp">
+                  <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2>
+                  <p>{{ home_data.com_welcome_msg | raw }}</p>
+                </div>
+                <!--  -->
+                <div class="col-sm-4 col-md-4 wow fadeInRight">
+                  <div class="card" style="">
+                  <h4 class="title text-center"><strong>Notice board</strong></h4>
+                  <img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px">
+                  <div class="card-body">
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+      </div>
+    </section>
+         
+
+  <section id="call-to-action">
+      <div class="container wow fadeIn why-with-us">
+          <h3 class="cta-title text-center"><em>Why with us</em></h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="cta-title text-left">Industries we focus</h3>
+            <ul class="cta-text">
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="cta-title text-center">Our strong point</h3>
+            
+          </div>
+        </div>
+      </div>
+    </section><!-- #call-to-action -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Services</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
+              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+    Call To Action Section
+    ============================-->
+    
+    <section id="team">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Team</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
+              <h4>Sarah Jhinson</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <section id="faq">
+      <div class="container wow fadeInUp">
+         <div class="row">
+             <div class="col-sm-6">
+               <h3 class="title">Faq<small>Frequent ask question</small></h3>
+               <div id="accordion">
+                   {% if home_data.com_site_faq %}
+                        {% set acd_count = 0 %}
+                        {% for faq_data in home_data.com_site_faq %}
+                           <div class="card">
+                             <div class="card-header">
+                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_"{{ acd_count }}>
+                               {{ faq_data.com_site_faq_title |raw }}
+                             </a>
+                             </div>
+                             <div id="collapseTwo" class="collapse">
+                               <div class="card-body">
+                                {{ faq_data.com_site_faq_desc | raw }}
+                               </div>
+                             </div>
+                           </div>
+                           
+                        {% endfor %}
+                   {% endif %}
+                 </div>
+               </div>
+             <div class="col-md-6">
+                 <h3 class="title">Blog</h3>
+             </div>
+             </div>
+         </div>
+      </div>
+    </section>
+
+    <!--==========================
+      Contact Section
+    ============================-->
+  </main>";s:5:"mtime";i:1512552075;s:6:"markup";s:9667:"<main id="main">
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section>
+        <div class="container">
+              <div class="row welcome-section">
+                <div class="col-sm-8 col-md-8 wow fadeInUp">
+                  <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2>
+                  <p>{{ home_data.com_welcome_msg | raw }}</p>
+                </div>
+                <!--  -->
+                <div class="col-sm-4 col-md-4 wow fadeInRight">
+                  <div class="card" style="">
+                  <h4 class="title text-center"><strong>Notice board</strong></h4>
+                  <img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px">
+                  <div class="card-body">
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+      </div>
+    </section>
+         
+
+  <section id="call-to-action">
+      <div class="container wow fadeIn why-with-us">
+          <h3 class="cta-title text-center"><em>Why with us</em></h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="cta-title text-left">Industries we focus</h3>
+            <ul class="cta-text">
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+              <li>industries 1</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="cta-title text-center">Our strong point</h3>
+            
+          </div>
+        </div>
+      </div>
+    </section><!-- #call-to-action -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Services</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
+              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+    Call To Action Section
+    ============================-->
+    
+    <section id="team">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Team</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
+              <h4>Sarah Jhinson</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <section id="faq">
+      <div class="container wow fadeInUp">
+         <div class="row">
+             <div class="col-sm-6">
+               <h3 class="title">Faq<small>Frequent ask question</small></h3>
+               <div id="accordion">
+                   {% if home_data.com_site_faq %}
+                        {% set acd_count = 0 %}
+                        {% for faq_data in home_data.com_site_faq %}
+                           <div class="card">
+                             <div class="card-header">
+                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_"{{ acd_count }}>
+                               {{ faq_data.com_site_faq_title |raw }}
+                             </a>
+                             </div>
+                             <div id="collapseTwo" class="collapse">
+                               <div class="card-body">
+                                {{ faq_data.com_site_faq_desc | raw }}
+                               </div>
+                             </div>
+                           </div>
+                           
+                        {% endfor %}
+                   {% endif %}
+                 </div>
+               </div>
+             <div class="col-md-6">
+                 <h3 class="title">Blog</h3>
+             </div>
+             </div>
+         </div>
+      </div>
+    </section>
+
+    <!--==========================
+      Contact Section
+    ============================-->
+  </main>";s:4:"code";N;s:5:"title";s:4:"home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}

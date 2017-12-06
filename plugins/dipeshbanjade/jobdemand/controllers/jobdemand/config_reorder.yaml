@@ -1,0 +1,4 @@
+title: JobDemand
+modelClass: DipeshBanjade\Jobdemand\Models\JobDemand
+toolbar:
+    buttons: reorder_toolbar

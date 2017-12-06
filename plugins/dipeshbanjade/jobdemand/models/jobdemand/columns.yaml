@@ -1,0 +1,12 @@
+columns:
+    job_com_name:
+        label: Title
+        type: text
+        sortable: true
+    job_com_start_date:
+        label: start
+        type: text
+        sortable: true
+    job_details:
+        label: 'Job Details'
+        type: text

@@ -1,0 +1,40 @@
+tabs:
+    fields:
+        noc_title:
+            label: Title
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Notice Board'
+        noc_desc:
+            label: 'Short Description'
+            size: ''
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: 'Notice Board'
+        noc_start_date:
+            label: 'Start Date'
+            oc.commentPosition: ''
+            mode: date
+            span: left
+            type: datepicker
+            tab: 'Notice Board'
+        noc_end_date:
+            label: 'End Date'
+            oc.commentPosition: ''
+            mode: date
+            span: right
+            type: datepicker
+            tab: 'Notice Board'
+        noc_img:
+            label: 'Choose Image'
+            span: left
+            oc.commentPosition: ''
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'Notice Board'

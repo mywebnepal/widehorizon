@@ -1,0 +1,16 @@
+columns:
+    noc_title:
+        label: Title
+        type: text
+        sortable: true
+    noc_desc:
+        label: Description
+        type: text
+    noc_start_date:
+        label: 'Start date'
+        type: text
+        sortable: true
+    noc_end_date:
+        label: 'End Date'
+        type: text
+        sortable: false

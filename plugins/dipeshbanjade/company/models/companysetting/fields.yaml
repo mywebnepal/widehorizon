@@ -1,0 +1,348 @@
+tabs:
+    fields:
+        com_name:
+            label: 'Company Name'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'Please enter your company name'
+            default: ''
+            type: text
+            tab: Details
+        com_addr:
+            label: 'Company Address'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'Enter company address here'
+            type: text
+            tab: Details
+        com_phone:
+            label: 'Company phone number'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 0-4447327
+            type: text
+            tab: Details
+        com_mob:
+            label: 'Company mobile number'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 97798075737....
+            type: text
+            tab: Details
+        com_fax:
+            label: 'Company fax number'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 01-337463
+            type: text
+            tab: Details
+        com_slogon:
+            label: 'Company slogon'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'we service you best manpower'
+            type: text
+            tab: Details
+        com_fb_link:
+            label: 'Company facebook link'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'tps://www.facebook.com/mywebnepal'
+            type: text
+            tab: Details
+        com_twitter_link:
+            label: 'Company twitter link'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'https://twitter.com/mywebnepal'
+            type: text
+            tab: Details
+        com_linkin_link:
+            label: 'Compnay linkin'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'https://www.linkedin.com/in/mywebnepal-nepal-b15493154/'
+            type: text
+            tab: Details
+        com_youtube_link:
+            label: 'Company you tube'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'https://www.youtube.com/channel/UC9LrLXEZd80EWqqF_09A1RQ'
+            type: text
+            tab: Details
+        com_gmail_link:
+            label: 'Company gmail'
+            oc.commentPosition: ''
+            span: left
+            placeholder: 'https://plus.google.com/mywebnepal'
+            type: text
+            tab: Details
+        com_logo:
+            label: 'Comapany logo'
+            oc.commentPosition: ''
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: Details
+        com_staff_details:
+            label: 'Staff detailes'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: left
+            type: repeater
+            tab: Staff
+            form:
+                fields:
+                    com_staff_name:
+                        label: 'Staff name'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    com_staff_degination:
+                        label: 'Staff Desigination'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    com_staff_fb:
+                        label: 'Staff facebook'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    com_staff_linkin:
+                        label: 'Staff LInkin'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    com_staff_twitter:
+                        label: 'Staff twitter'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    com_staff_phone:
+                        label: 'Staff phone number'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    staff_image:
+                        label: 'Staff image'
+                        oc.commentPosition: ''
+                        mode: image
+                        useCaption: true
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: left
+                        type: fileupload
+        com_crt_details:
+            label: Repeater
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: Certificate
+            form:
+                fields:
+                    com_frt_name:
+                        label: 'Certificate name'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    issue_date:
+                        label: 'Issue date'
+                        oc.commentPosition: ''
+                        mode: datetime
+                        span: left
+                        type: datepicker
+                    certificate_image:
+                        label: Certificate
+                        oc.commentPosition: ''
+                        mode: image
+                        useCaption: true
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: left
+                        type: fileupload
+        com_sis_com:
+            label: 'Sister company'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: right
+            type: repeater
+            tab: Certificate
+            form:
+                fields:
+                    sis_name:
+                        label: 'company name'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    sis_email:
+                        label: 'Company email'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    sis_phone:
+                        label: 'Company phone no.'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    sis_logo:
+                        label: 'Company logo'
+                        oc.commentPosition: ''
+                        mode: image
+                        useCaption: true
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: left
+                        type: fileupload
+        com_focus_port:
+            label: 'Compnay strong point'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: IndustriesFocus
+            form:
+                fields:
+                    com_focus_on:
+                        label: 'Company focus on'
+                        oc.commentPosition: ''
+                        span: left
+                        placeholder: 'Please enter industries name'
+                        type: text
+        com_strong_point:
+            label: 'Company strong point'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: IndustriesFocus
+            form:
+                fields:
+                    strong_point:
+                        label: Text
+                        oc.commentPosition: ''
+                        span: right
+                        type: text
+        com_welcome_msg_heading:
+            label: 'Welcome message heading'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: welcomeMessage
+        com_welcome_msg:
+            label: 'Short Message'
+            size: ''
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: welcomeMessage
+        com_working_time:
+            label: 'Company working hour'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: 'Working hour'
+            form:
+                fields:
+                    com_working_day:
+                        label: 'Company working day from to'
+                        oc.commentPosition: ''
+                        span: left
+                        placeholder: 'Monday to Friday'
+                        type: text
+                    com_working_hour:
+                        label: 'Company working hour'
+                        oc.commentPosition: ''
+                        span: left
+                        placeholder: '10am to 5pm'
+                        type: text
+        com_our_patner:
+            label: Patner
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: Patner
+            form:
+                fields:
+                    patner_name:
+                        label: 'Company Name'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    patner_website:
+                        label: 'Company website'
+                        oc.commentPosition: ''
+                        span: left
+                        placeholder: 'htttp://mywebnepal.com'
+                        type: text
+                    patner_logo:
+                        label: 'Company logo'
+                        oc.commentPosition: ''
+                        mode: image
+                        useCaption: true
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: left
+                        type: fileupload
+        com_home_slider:
+            label: 'Home Slider'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: left
+            type: repeater
+            tab: slider
+            form:
+                fields:
+                    slider_title:
+                        label: Title
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    slider_desc:
+                        label: 'Short Description'
+                        size: ''
+                        oc.commentPosition: ''
+                        span: full
+                        type: richeditor
+                    slider_img:
+                        label: 'Choose Image'
+                        oc.commentPosition: ''
+                        mode: image
+                        useCaption: true
+                        thumbOptions:
+                            mode: crop
+                            extension: auto
+                        span: left
+                        type: fileupload
+        com_site_faq:
+            label: Faq
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: left
+            type: repeater
+            tab: Faqs
+            form:
+                fields:
+                    com_site_faq_title:
+                        label: 'Faq Title'
+                        oc.commentPosition: ''
+                        span: left
+                        placeholder: 'Faq Question'
+                        type: text
+                    com_site_faq_desc:
+                        label: 'Short Anser'
+                        size: ''
+                        oc.commentPosition: ''
+                        span: full
+                        type: richeditor

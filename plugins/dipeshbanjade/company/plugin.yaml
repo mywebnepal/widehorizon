@@ -1,0 +1,11 @@
+plugin:
+    name: 'dipeshbanjade.company::lang.plugin.name'
+    description: 'dipeshbanjade.company::lang.plugin.description'
+    author: 'Dipesh Banjade'
+    icon: oc-icon-bullseye
+    homepage: ''
+navigation:
+    companysetting:
+        label: 'Company setting'
+        url: dipeshbanjade/company/companysetting
+        icon: icon-bullseye

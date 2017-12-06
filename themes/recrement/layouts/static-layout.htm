@@ -1,0 +1,65 @@
+description = "Default layout"
+[contactform]
+==
+<?php
+use dipeshbanjade\company\Models\CompanySetting;
+    function onStart()
+    {
+       $data = CompanySetting::first();
+       $this['home_data'] = $data;
+    }
+?>
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="Dipesh Banjade">
+   {% partial 'site/style' %}
+   {% styles %}
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+   <section>
+         {% partial 'site/header' %}
+  </section>
+
+  <section>
+    {% if this.page.url == '/' %}
+           {% page %}
+           {% else %}
+             <div class="container">
+           {% page %}
+        </div>
+    {% endif %}
+  </section>
+  <section>
+          <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+       {% partial 'site/footer' %}
+  </section>
+ 
+
+  
+
+  <!--==========================
+    Footer
+  ============================-->
+  
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Contact Form JavaScript File -->
+   {% partial 'site/script' %}
+    <!-- Scripts -->
+        {% framework extras %}
+        {% scripts %}
+
+</body>
+</html>

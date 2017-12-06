@@ -1,0 +1,73 @@
+tabs:
+    fields:
+        job_com_name:
+            label: 'Company Name'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Company Details'
+        job_com_desc:
+            label: 'Company Description'
+            size: ''
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: 'Company Details'
+        job_com_country:
+            label: Country
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Company Details'
+        job_com_start_date:
+            label: 'Start date'
+            oc.commentPosition: ''
+            mode: datetime
+            span: left
+            type: datepicker
+            tab: 'Company Details'
+        job_com_end_date:
+            label: 'End date'
+            oc.commentPosition: ''
+            mode: datetime
+            span: auto
+            type: datepicker
+            tab: 'Company Details'
+        job_details:
+            label: 'Jobs details'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: 'jobs details'
+            form:
+                fields:
+                    job_title:
+                        label: Title
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    job_desc:
+                        label: Description
+                        size: ''
+                        oc.commentPosition: ''
+                        span: full
+                        type: richeditor
+                    job_duration:
+                        label: Duration
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    job_facilities:
+                        label: Facilities
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    job_status:
+                        label: 'Job Status'
+                        oc.commentPosition: ''
+                        options:
+                            c: 'current job'
+                            u: upcomming
+                        span: left
+                        type: dropdown

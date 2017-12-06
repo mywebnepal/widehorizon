@@ -1,0 +1,10 @@
+name: CompanySetting
+form: $/dipeshbanjade/company/models/companysetting/fields.yaml
+modelClass: DipeshBanjade\Company\Models\CompanySetting
+defaultRedirect: dipeshbanjade/company/companysetting
+create:
+    redirect: 'dipeshbanjade/company/companysetting/update/:id'
+    redirectClose: dipeshbanjade/company/companysetting
+update:
+    redirect: dipeshbanjade/company/companysetting
+    redirectClose: dipeshbanjade/company/companysetting
