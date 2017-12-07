@@ -89,6 +89,25 @@ tabs:
             span: left
             type: fileupload
             tab: Details
+        com_working_time:
+            label: 'workign day and hour'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: Details
+            form:
+                fields:
+                    com_working_day:
+                        label: 'working day'
+                        oc.commentPosition: ''
+                        span: right
+                        type: text
+                    com_working_hour:
+                        label: 'workign day'
+                        oc.commentPosition: ''
+                        span: right
+                        type: text
         com_staff_details:
             label: 'Staff detailes'
             oc.commentPosition: ''
@@ -129,15 +148,11 @@ tabs:
                         span: left
                         type: text
                     staff_image:
-                        label: 'Staff image'
+                        label: 'Select staff image'
                         oc.commentPosition: ''
                         mode: image
-                        useCaption: true
-                        thumbOptions:
-                            mode: crop
-                            extension: auto
                         span: left
-                        type: fileupload
+                        type: mediafinder
         com_crt_details:
             label: Repeater
             oc.commentPosition: ''
@@ -159,15 +174,11 @@ tabs:
                         span: left
                         type: datepicker
                     certificate_image:
-                        label: Certificate
+                        label: 'select certificate'
                         oc.commentPosition: ''
                         mode: image
-                        useCaption: true
-                        thumbOptions:
-                            mode: crop
-                            extension: auto
                         span: left
-                        type: fileupload
+                        type: mediafinder
         com_sis_com:
             label: 'Sister company'
             oc.commentPosition: ''
@@ -193,15 +204,11 @@ tabs:
                         span: left
                         type: text
                     sis_logo:
-                        label: 'Company logo'
+                        label: 'select logo'
                         oc.commentPosition: ''
                         mode: image
-                        useCaption: true
-                        thumbOptions:
-                            mode: crop
-                            extension: auto
                         span: left
-                        type: fileupload
+                        type: mediafinder
         com_focus_port:
             label: 'Compnay strong point'
             oc.commentPosition: ''
@@ -244,27 +251,6 @@ tabs:
             span: full
             type: richeditor
             tab: welcomeMessage
-        com_working_time:
-            label: 'Company working hour'
-            oc.commentPosition: ''
-            prompt: 'Add new item'
-            span: auto
-            type: repeater
-            tab: 'Working hour'
-            form:
-                fields:
-                    com_working_day:
-                        label: 'Company working day from to'
-                        oc.commentPosition: ''
-                        span: left
-                        placeholder: 'Monday to Friday'
-                        type: text
-                    com_working_hour:
-                        label: 'Company working hour'
-                        oc.commentPosition: ''
-                        span: left
-                        placeholder: '10am to 5pm'
-                        type: text
         com_our_patner:
             label: Patner
             oc.commentPosition: ''
@@ -286,15 +272,11 @@ tabs:
                         placeholder: 'htttp://mywebnepal.com'
                         type: text
                     patner_logo:
-                        label: 'Company logo'
+                        label: 'company logo'
                         oc.commentPosition: ''
                         mode: image
-                        useCaption: true
-                        thumbOptions:
-                            mode: crop
-                            extension: auto
                         span: left
-                        type: fileupload
+                        type: mediafinder
         com_home_slider:
             label: 'Home Slider'
             oc.commentPosition: ''
@@ -316,15 +298,11 @@ tabs:
                         span: full
                         type: richeditor
                     slider_img:
-                        label: 'Choose Image'
+                        label: 'Select slider image'
+                        span: auto
                         oc.commentPosition: ''
-                        mode: image
-                        useCaption: true
-                        thumbOptions:
-                            mode: crop
-                            extension: auto
-                        span: left
-                        type: fileupload
+                        mode: file
+                        type: mediafinder
         com_site_faq:
             label: Faq
             oc.commentPosition: ''
@@ -342,6 +320,38 @@ tabs:
                         type: text
                     com_site_faq_desc:
                         label: 'Short Anser'
+                        size: ''
+                        oc.commentPosition: ''
+                        span: full
+                        type: richeditor
+        com_services_desc:
+            label: 'services short description'
+            size: ''
+            oc.commentPosition: ''
+            span: left
+            type: textarea
+            tab: services
+        com_servies:
+            label: 'our services Details'
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: left
+            type: repeater
+            tab: services
+            form:
+                fields:
+                    services_icon:
+                        label: 'services icon'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    service_heading:
+                        label: 'services heading'
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    services_desc:
+                        label: 'services description'
                         size: ''
                         oc.commentPosition: ''
                         span: full

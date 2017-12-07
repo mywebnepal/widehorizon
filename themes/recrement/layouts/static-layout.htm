@@ -3,10 +3,15 @@ description = "Default layout"
 ==
 <?php
 use dipeshbanjade\company\Models\CompanySetting;
+use dipeshbanjade\noticeboard\Models\NoticeBoard;
     function onStart()
     {
+       $currentDate = date('Y-m-d');
        $data = CompanySetting::first();
        $this['home_data'] = $data;
+
+       $notice = NoticeBoard::where('noc_end_date', '>', $currentDate)->get();
+       $this['noticeData'] = $notice;
     }
 ?>
 ==

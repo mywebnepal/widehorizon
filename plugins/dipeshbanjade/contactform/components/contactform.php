@@ -44,7 +44,7 @@ class contactform extends ComponentBase
                 'email'         => Input::get('e_mail'),
                 'msg'       => Input::get('msg')
             ];
-            Mail::send('neptroxsolution.contactform::mail.message', $vars, function($message) {
+            Mail::send('dipeshbanjade.contactform::mail.message', $vars, function($message) {
                 $message->to('dbsandesh@gmail.com', 'Admin Person');
                 $message->subject('Wide Horizon');
             });

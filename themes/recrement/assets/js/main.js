@@ -57,9 +57,21 @@ jQuery(document).ready(function( $ ) {
 
 
   /*mulgiple slider*/
-  
+var notice_count= $('div.notice-notice-board-display').length;
+  $("#noticeBoard > div:gt(0)").hide();
+ if (notice_count > 1 ) {
+setInterval(function() { 
+    $('#noticeBoard > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#noticeBoard');
+   },  3000);
+}
 
-  });
+
+});
 
 // for every slide in carousel, copy the next slide's item in the slide.
 // Do the same for the next, next item.

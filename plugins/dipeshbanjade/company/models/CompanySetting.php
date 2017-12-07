@@ -29,19 +29,19 @@ class CompanySetting extends Model
     /*single image mapping*/
     public $attachOne = [
         'com_logo' => 'System\Models\File',
-        'staff_image'=> 'System\Models\File',
-        'certificate_image' => 'System\Models\File',
-        'sis_logo'=>'System\Models\File',
-        'patner_logo'=>'System\Models\File',
-         'slider_img' =>'System\Models\File'
+        /*'staff_image'=> 'System\Models\File',*/
+        // 'certificate_image' => 'System\Models\File',
+        // 'sis_logo'=>'System\Models\File',
+        // 'patner_logo'=>'System\Models\File',
+        /* 'slider_img' =>'System\Models\File'*/
     ];
     /*multiple image mapping*/
-    public $attachMany = [
+    /*public $attachMany = [
         'slider_img' => 'System\Models\File'
-    ];
+    ];*/
 
     /*json file manage */
     protected $jsonable = [
-        'com_staff_details', 'com_crt_details', 'com_sis_com', 'com_focus_port', 'com_welcome_msg', 'com_working_time', 'com_our_patner', 'com_home_slider','com_strong_point', 'com_site_faq'
+        'com_staff_details', 'com_crt_details', 'com_sis_com', 'com_focus_port', 'com_welcome_msg', 'com_working_time', 'com_our_patner', 'com_home_slider','com_strong_point', 'com_site_faq', 'com_servies'
     ];
 }

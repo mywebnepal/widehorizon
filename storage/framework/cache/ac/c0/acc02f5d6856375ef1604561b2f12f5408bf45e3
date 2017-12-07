@@ -1,4 +1,4 @@
-1512559684a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:9739:"title = "home"
+1512675859a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:15572:"title = "home"
 url = "/"
 layout = "static-layout"
 is_hidden = 0
@@ -10,21 +10,70 @@ is_hidden = 0
     <section>
         <div class="container">
               <div class="row welcome-section">
-                <div class="col-sm-8 col-md-8 wow fadeInUp">
+                <div class="col-sm-7 col-md-7 wow fadeInUp">
                   <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2>
                   <p>{{ home_data.com_welcome_msg | raw }}</p>
                 </div>
                 <!--  -->
-                <div class="col-sm-4 col-md-4 wow fadeInRight">
-                  <div class="card" style="">
-                  <h4 class="title text-center"><strong>Notice board</strong></h4>
-                  <img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px">
-                  <div class="card-body">
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a>
+
+                <div class="col-sm-5 col-md-5 wow fadeInRight">
+                  <div id="noticeBoard">
+                     {% if noticeData %}
+                      {% for notice in noticeData %}
+                        <div class="notice-notice-board-display">
+                          <ul>
+                            <li><h2>Notice Board</h2></li>
+                            <li><h4>{{ notice.noc_title | raw }}</h4></li>
+                            <li>
+                            <img class="img-responsive" src="{{ notice.noc_img.path }}" alt="Notice Board">
+                             
+                            </li>
+                            <li><p>
+                              {{ str_limit(notice.noc_desc, 100) | raw }}
+                            </p></li>
+                            <li>
+                            <p class="pull-left">
+                              <small>
+                              <b>Publish At</b> 
+                              <em>{{ notice.noc_start_date }}</em>
+                              </small>&nbsp;&nbsp;
+                              <small>
+                              <b>End At</b> 
+                              <em>{{ notice.noc_end_date }}</em>
+                              </small>
+                            </p>
+                            <p class="pull-right">
+                              
+                              <a href="/notice/{{ notice.id }}" class="btn btn-primary btn-sm pull-right">Read More..</a>
+                            </li>
+                              
+                            </p> 
+                          </ul>
+                        </div>
+                       {% endfor %}
+                       {% else %}
+                       <div class="notice-notice-board-display">
+                         <ul>
+                           <li><h2>Notice Board2</h2></li>
+                           <li><img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px"></li>
+                           <li><p>Demo testing for new feedback tools</p></li>
+                           <li>Date   <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a></li>
+                         </ul>
+                       </div>
+
+                       <div class="notice-notice-board-display">
+                         <ul>
+                           <li><h2>Notice Board3</h2></li>
+                           <li><img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px"></li>
+                           <li><p>Demo testing for new feedback tools</p></li>
+                           <li>Date   <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a></li>
+                         </ul>
+                       </div>
+                       {% endif %}
+                    
                   </div>
                 </div>
-                </div>
+                
               </div>
       </div>
     </section>
@@ -33,22 +82,33 @@ is_hidden = 0
   <section id="call-to-action">
       <div class="container wow fadeIn why-with-us">
           <h3 class="cta-title text-center"><em>Why with us</em></h3>
+          <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         <div class="row">
-          <div class="col-lg-6">
-            <h3 class="cta-title text-left">Industries we focus</h3>
-            <ul class="cta-text">
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
+          <div class="col-sm-4">
+            <h4 class="cta-title text-left">We focus in</h4>
+            <ul class="why-with-us">
+              {% if home_data.com_focus_port %}
+                 {% for focus in home_data.com_focus_port %}
+                    <li class="tick">{{ focus.com_focus_on }}</li>
+                  {% endfor %}
+              {% endif %}
             </ul>
           </div>
-          <div class="col-lg-6">
+           <div class="col-lg-4">
+            <h4 class="cta-title text-left">Our Countries</h4>
+             <ul class="why-with-us">
+                 <li class="tick">Dubai</li>
+                 <li class="tick"> Qatar</li>
+                 <li class="tick">Malasiya</li>
+                 <li class="tick">Saudi</li>
+                 <li class="tick">South Africa</li>
+                 <li class="tick"> Poland</li>
+             </ul>
+          </div>
+
+          <div class="col-lg-4">
             <h3 class="cta-title text-center">Our strong point</h3>
+
             
           </div>
         </div>
@@ -61,53 +121,76 @@ is_hidden = 0
     <section id="services">
       <div class="container wow fadeIn">
         <div class="section-header">
-          <h3 class="section-title">Services</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3 class="text-center">Services</h3>
+          {% if home_data.com_services_desc %}
+              <p class="section-description">
+                 {{ home_data.com_services_desc }}
+              </p>
+             {% else %}
+             <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          {% endif %}
+          
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
+          {% if home_data.com_servies %}
+              {% for serData in home_data.com_servies %}
+                   <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                     <div class="box">
+                       <div class="icon"><a href=""><i class="fa {{ serData.services_icon }}"></i></a></div>
+                       <h4 ><a href="">{{ serData.service_heading | raw }}</a></h4>
+                       <p>{{ str_limit(serData.services_desc, 150) | raw }}</p>
+                     </div>
+                   </div>
+              {% endfor %}
+                {% else %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                  </div>
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
+                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
+                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
+                    <h4 class="title"><a href="">Magni Dolores</a></h4>
+                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
+                    <h4 class="title"><a href="">Nemo Enim</a></h4>
+                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
+                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                  </div>
+                </div>
+          {% endif %}
         </div>
 
       </div>
@@ -124,61 +207,80 @@ is_hidden = 0
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Product Manager</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+          {% if home_data.com_staff_details %}
+               {% for  teamData in home_data.com_staff_details %}
+                   <div class="col-lg-3 col-md-6">
+                     <div class="member">
+                       <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+                       <h4>{{ teamData.com_staff_name }}</h4>
+                       <span>{{ teamData.com_staff_degination }}</span>
+                       <div class="social">
+                         <a href="{{ teamData.com_staff_twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                         <a href="{{ teamData.com_staff_fb }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                         <a href="{{ teamData.com_staff_linkin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                       </div>
+                     </div>
+                   </div>
+               {% endfor %}
+               {% else %}
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+                      <h4>Walter White</h4>
+                      <span>Chief Executive Officer</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
+                      <h4>Sarah Jhinson</h4>
+                      <span>Product Manager</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
+                      <h4>William Anderson</h4>
+                      <span>CTO</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
+                      <h4>Amanda Jepson</h4>
+                      <span>Accountant</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+          {% endif %}
+          
         </div>
 
       </div>
@@ -188,18 +290,19 @@ is_hidden = 0
       <div class="container wow fadeInUp">
          <div class="row">
              <div class="col-sm-6">
-               <h3 class="title">Faq<small>Frequent ask question</small></h3>
+               <h3 class="title"><strong>Faq</strong> &nbsp;<small>Frequent ask question</small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
-                        {% set acd_count = 0 %}
+                        {% set accordion_count = 0 %}
                         {% for faq_data in home_data.com_site_faq %}
+                           {% set accordion_count =  accordion_count + 1 %}
                            <div class="card">
                              <div class="card-header">
-                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_"{{ acd_count }}>
-                               {{ faq_data.com_site_faq_title |raw }}
+                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{ accordion_count }}">
+                               <strong>{{ faq_data.com_site_faq_title |raw }}</strong>
                              </a>
                              </div>
-                             <div id="collapseTwo" class="collapse">
+                             <div id="collapse_{{ accordion_count }}" class="collapse">
                                <div class="card-body">
                                 {{ faq_data.com_site_faq_desc | raw }}
                                </div>
@@ -221,28 +324,77 @@ is_hidden = 0
     <!--==========================
       Contact Section
     ============================-->
-  </main>";s:5:"mtime";i:1512552075;s:6:"markup";s:9667:"<main id="main">
+  </main>";s:5:"mtime";i:1512675255;s:6:"markup";s:15500:"<main id="main">
     <!--==========================
       About Us Section
     ============================-->
     <section>
         <div class="container">
               <div class="row welcome-section">
-                <div class="col-sm-8 col-md-8 wow fadeInUp">
+                <div class="col-sm-7 col-md-7 wow fadeInUp">
                   <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2>
                   <p>{{ home_data.com_welcome_msg | raw }}</p>
                 </div>
                 <!--  -->
-                <div class="col-sm-4 col-md-4 wow fadeInRight">
-                  <div class="card" style="">
-                  <h4 class="title text-center"><strong>Notice board</strong></h4>
-                  <img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px">
-                  <div class="card-body">
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a>
+
+                <div class="col-sm-5 col-md-5 wow fadeInRight">
+                  <div id="noticeBoard">
+                     {% if noticeData %}
+                      {% for notice in noticeData %}
+                        <div class="notice-notice-board-display">
+                          <ul>
+                            <li><h2>Notice Board</h2></li>
+                            <li><h4>{{ notice.noc_title | raw }}</h4></li>
+                            <li>
+                            <img class="img-responsive" src="{{ notice.noc_img.path }}" alt="Notice Board">
+                             
+                            </li>
+                            <li><p>
+                              {{ str_limit(notice.noc_desc, 100) | raw }}
+                            </p></li>
+                            <li>
+                            <p class="pull-left">
+                              <small>
+                              <b>Publish At</b> 
+                              <em>{{ notice.noc_start_date }}</em>
+                              </small>&nbsp;&nbsp;
+                              <small>
+                              <b>End At</b> 
+                              <em>{{ notice.noc_end_date }}</em>
+                              </small>
+                            </p>
+                            <p class="pull-right">
+                              
+                              <a href="/notice/{{ notice.id }}" class="btn btn-primary btn-sm pull-right">Read More..</a>
+                            </li>
+                              
+                            </p> 
+                          </ul>
+                        </div>
+                       {% endfor %}
+                       {% else %}
+                       <div class="notice-notice-board-display">
+                         <ul>
+                           <li><h2>Notice Board2</h2></li>
+                           <li><img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px"></li>
+                           <li><p>Demo testing for new feedback tools</p></li>
+                           <li>Date   <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a></li>
+                         </ul>
+                       </div>
+
+                       <div class="notice-notice-board-display">
+                         <ul>
+                           <li><h2>Notice Board3</h2></li>
+                           <li><img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px"></li>
+                           <li><p>Demo testing for new feedback tools</p></li>
+                           <li>Date   <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a></li>
+                         </ul>
+                       </div>
+                       {% endif %}
+                    
                   </div>
                 </div>
-                </div>
+                
               </div>
       </div>
     </section>
@@ -251,22 +403,33 @@ is_hidden = 0
   <section id="call-to-action">
       <div class="container wow fadeIn why-with-us">
           <h3 class="cta-title text-center"><em>Why with us</em></h3>
+          <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         <div class="row">
-          <div class="col-lg-6">
-            <h3 class="cta-title text-left">Industries we focus</h3>
-            <ul class="cta-text">
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
-              <li>industries 1</li>
+          <div class="col-sm-4">
+            <h4 class="cta-title text-left">We focus in</h4>
+            <ul class="why-with-us">
+              {% if home_data.com_focus_port %}
+                 {% for focus in home_data.com_focus_port %}
+                    <li class="tick">{{ focus.com_focus_on }}</li>
+                  {% endfor %}
+              {% endif %}
             </ul>
           </div>
-          <div class="col-lg-6">
+           <div class="col-lg-4">
+            <h4 class="cta-title text-left">Our Countries</h4>
+             <ul class="why-with-us">
+                 <li class="tick">Dubai</li>
+                 <li class="tick"> Qatar</li>
+                 <li class="tick">Malasiya</li>
+                 <li class="tick">Saudi</li>
+                 <li class="tick">South Africa</li>
+                 <li class="tick"> Poland</li>
+             </ul>
+          </div>
+
+          <div class="col-lg-4">
             <h3 class="cta-title text-center">Our strong point</h3>
+
             
           </div>
         </div>
@@ -279,53 +442,76 @@ is_hidden = 0
     <section id="services">
       <div class="container wow fadeIn">
         <div class="section-header">
-          <h3 class="section-title">Services</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3 class="text-center">Services</h3>
+          {% if home_data.com_services_desc %}
+              <p class="section-description">
+                 {{ home_data.com_services_desc }}
+              </p>
+             {% else %}
+             <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          {% endif %}
+          
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
+          {% if home_data.com_servies %}
+              {% for serData in home_data.com_servies %}
+                   <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                     <div class="box">
+                       <div class="icon"><a href=""><i class="fa {{ serData.services_icon }}"></i></a></div>
+                       <h4 ><a href="">{{ serData.service_heading | raw }}</a></h4>
+                       <p>{{ str_limit(serData.services_desc, 150) | raw }}</p>
+                     </div>
+                   </div>
+              {% endfor %}
+                {% else %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                  </div>
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
+                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
+                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
+                    <h4 class="title"><a href="">Magni Dolores</a></h4>
+                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
+                    <h4 class="title"><a href="">Nemo Enim</a></h4>
+                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="box">
+                    <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
+                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                  </div>
+                </div>
+          {% endif %}
         </div>
 
       </div>
@@ -342,61 +528,80 @@ is_hidden = 0
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Product Manager</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+          {% if home_data.com_staff_details %}
+               {% for  teamData in home_data.com_staff_details %}
+                   <div class="col-lg-3 col-md-6">
+                     <div class="member">
+                       <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+                       <h4>{{ teamData.com_staff_name }}</h4>
+                       <span>{{ teamData.com_staff_degination }}</span>
+                       <div class="social">
+                         <a href="{{ teamData.com_staff_twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                         <a href="{{ teamData.com_staff_fb }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                         <a href="{{ teamData.com_staff_linkin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                       </div>
+                     </div>
+                   </div>
+               {% endfor %}
+               {% else %}
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
+                      <h4>Walter White</h4>
+                      <span>Chief Executive Officer</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
+                      <h4>Sarah Jhinson</h4>
+                      <span>Product Manager</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
+                      <h4>William Anderson</h4>
+                      <span>CTO</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                      <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
+                      <h4>Amanda Jepson</h4>
+                      <span>Accountant</span>
+                      <div class="social">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+          {% endif %}
+          
         </div>
 
       </div>
@@ -406,18 +611,19 @@ is_hidden = 0
       <div class="container wow fadeInUp">
          <div class="row">
              <div class="col-sm-6">
-               <h3 class="title">Faq<small>Frequent ask question</small></h3>
+               <h3 class="title"><strong>Faq</strong> &nbsp;<small>Frequent ask question</small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
-                        {% set acd_count = 0 %}
+                        {% set accordion_count = 0 %}
                         {% for faq_data in home_data.com_site_faq %}
+                           {% set accordion_count =  accordion_count + 1 %}
                            <div class="card">
                              <div class="card-header">
-                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_"{{ acd_count }}>
-                               {{ faq_data.com_site_faq_title |raw }}
+                               <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{ accordion_count }}">
+                               <strong>{{ faq_data.com_site_faq_title |raw }}</strong>
                              </a>
                              </div>
-                             <div id="collapseTwo" class="collapse">
+                             <div id="collapse_{{ accordion_count }}" class="collapse">
                                <div class="card-body">
                                 {{ faq_data.com_site_faq_desc | raw }}
                                </div>
