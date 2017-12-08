@@ -1,9 +1,31 @@
-1512676215a:1:{s:15:"site/footer.htm";a:7:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:2172:"[contactform]
+1512733624a:1:{s:15:"site/footer.htm";a:7:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:3268:"[contactform]
 
 [viewBag]
 ==
-<div class="row">logo slider</div>
-<footer id="footer">
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 logo-slider">
+         <h2 class="title text-center">Our Clients</h2>
+         <ul class="bxslider">
+           <li><a href="" target="_blank"><img src="http://placehold.it/160x189&text=1" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=2" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=3" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=4" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=5" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=6" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=7" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=8" /></a></li>
+         </ul>
+    </div>
+</div>
+
+<footer id="footer" style="margin-top: -3em;">
     <div class="footer-top">
       <div class="container">
          <section id="contact">
@@ -56,8 +78,30 @@
          </section><!-- #contact -->
       </div>
     </div>
-  </footer><!-- #footer -->";s:5:"mtime";i:1512648901;s:6:"markup";s:2140:"<div class="row">logo slider</div>
-<footer id="footer">
+  </footer><!-- #footer -->";s:5:"mtime";i:1512731165;s:6:"markup";s:3236:"<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 logo-slider">
+         <h2 class="title text-center">Our Clients</h2>
+         <ul class="bxslider">
+           <li><a href="" target="_blank"><img src="http://placehold.it/160x189&text=1" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=2" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=3" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=4" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=5" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=6" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=7" /></a></li>
+           <li><a href="" target="_blank">
+           <img src="http://placehold.it/160x189&text=8" /></a></li>
+         </ul>
+    </div>
+</div>
+
+<footer id="footer" style="margin-top: -3em;">
     <div class="footer-top">
       <div class="container">
          <section id="contact">

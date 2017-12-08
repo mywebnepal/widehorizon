@@ -1,0 +1,15 @@
+title = "Apply job"
+url = "/apply-job"
+layout = "static-layout"
+is_hidden = 0
+
+[contactform]
+==
+<div class="row">
+	<div class="container">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+         {% component 'contactform' %}
+         {{ this.page.url }}
+         </div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-1512675859a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:15572:"title = "home"
+1512733628a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:17305:"title = "home"
 url = "/"
 layout = "static-layout"
 is_hidden = 0
@@ -290,7 +290,7 @@ is_hidden = 0
       <div class="container wow fadeInUp">
          <div class="row">
              <div class="col-sm-6">
-               <h3 class="title"><strong>Faq</strong> &nbsp;<small>Frequent ask question</small></h3>
+               <h3 class="title"><strong>Faq</strong> &nbsp;<small><i>Frequent ask question</i></small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
                         {% set accordion_count = 0 %}
@@ -314,17 +314,48 @@ is_hidden = 0
                  </div>
                </div>
              <div class="col-md-6">
-                 <h3 class="title">Blog</h3>
+                 <h3 class="title">Blog &nbsp;&nbsp; <small><i>Latest new feedback</i></small></h3>
+                  <div class="row">
+                    {% if myblog %}
+                        {% for myblog in myblog | slice(0,2) %}
+                                <div class="col-md-6">
+                                    <div class="myblog">
+                                        <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
+                                        <div class="text-view transition">
+                                            <h4>{{ myblog.title }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        {% endfor %}
+                    {% else %}
+                       <div class="col-md-6">
+                           <div class="myblog">
+                               <img src="http://placehold.it/350x150" class="img-responsive transition">
+                               <div class="text-view transition">
+                                   <h4>View Details</h4>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="myblog">
+                               <img src="http://placehold.it/350x150" class="img-responsive transition">
+                               <div class="text-view transition">
+                                   <h4>View Details</h4>
+                               </div>
+                           </div>
+                       </div>
+                    {% endif %}
+                  </div>
              </div>
              </div>
          </div>
-      </div>
     </section>
 
     <!--==========================
       Contact Section
     ============================-->
-  </main>";s:5:"mtime";i:1512675255;s:6:"markup";s:15500:"<main id="main">
+  </main>";s:5:"mtime";i:1512719069;s:6:"markup";s:17233:"<main id="main">
     <!--==========================
       About Us Section
     ============================-->
@@ -611,7 +642,7 @@ is_hidden = 0
       <div class="container wow fadeInUp">
          <div class="row">
              <div class="col-sm-6">
-               <h3 class="title"><strong>Faq</strong> &nbsp;<small>Frequent ask question</small></h3>
+               <h3 class="title"><strong>Faq</strong> &nbsp;<small><i>Frequent ask question</i></small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
                         {% set accordion_count = 0 %}
@@ -635,11 +666,42 @@ is_hidden = 0
                  </div>
                </div>
              <div class="col-md-6">
-                 <h3 class="title">Blog</h3>
+                 <h3 class="title">Blog &nbsp;&nbsp; <small><i>Latest new feedback</i></small></h3>
+                  <div class="row">
+                    {% if myblog %}
+                        {% for myblog in myblog | slice(0,2) %}
+                                <div class="col-md-6">
+                                    <div class="myblog">
+                                        <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
+                                        <div class="text-view transition">
+                                            <h4>{{ myblog.title }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        {% endfor %}
+                    {% else %}
+                       <div class="col-md-6">
+                           <div class="myblog">
+                               <img src="http://placehold.it/350x150" class="img-responsive transition">
+                               <div class="text-view transition">
+                                   <h4>View Details</h4>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="myblog">
+                               <img src="http://placehold.it/350x150" class="img-responsive transition">
+                               <div class="text-view transition">
+                                   <h4>View Details</h4>
+                               </div>
+                           </div>
+                       </div>
+                    {% endif %}
+                  </div>
              </div>
              </div>
          </div>
-      </div>
     </section>
 
     <!--==========================

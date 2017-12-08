@@ -1,17 +1,21 @@
 description = "Default layout"
+[staticPage]
 [contactform]
 ==
 <?php
 use dipeshbanjade\company\Models\CompanySetting;
 use dipeshbanjade\noticeboard\Models\NoticeBoard;
+use rainlab\blog\Models\Post;
     function onStart()
     {
        $currentDate = date('Y-m-d');
        $data = CompanySetting::first();
        $this['home_data'] = $data;
-
        $notice = NoticeBoard::where('noc_end_date', '>', $currentDate)->get();
        $this['noticeData'] = $notice;
+
+       $myblog = Post::orderBy('created_at', 'desc')->get();
+       $this['myblog'] = $myblog;
     }
 ?>
 ==
@@ -41,9 +45,14 @@ use dipeshbanjade\noticeboard\Models\NoticeBoard;
     {% if this.page.url == '/' %}
            {% page %}
            {% else %}
-             <div class="container">
-           {% page %}
-        </div>
+             <div class="row">
+                <div class="container-fluid">
+                  <h3 class="page-title"><i>{{ this.page.title }}</i></h3>
+                </div>
+                <div class="container">
+                  {% page %}
+                </div>
+             </div>
     {% endif %}
   </section>
   <section>
