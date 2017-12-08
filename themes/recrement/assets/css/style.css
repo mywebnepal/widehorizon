@@ -1142,6 +1142,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 .blog_div:hover{
     box-shadow: 0 0 12px 3px #b0b2ab;
 }
+.blog_div img{
+  max-height: 250px;
+}
 
 .slider-caption{
   background: #000;
@@ -1153,7 +1156,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 1em;
 }
 .carousel-item img{
-  max-height: 450px;
+  max-height: 500px;
 }
 
 /*logo slider*/
@@ -1161,3 +1164,25 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-top: 2em;
   margin-bottom: 0em;
 }
+.notice-board{
+  width: 60%;
+  height: auto;
+  margin:0 auto;
+  border:5px solid #DDD;
+  border-radius: 1em;
+  text-align: center;
+}
+.myblog a{
+  color: #000 !important;
+}
+.myfaq a{
+  color: #000 !important;
+}
+.service-box a {
+  color: #666666 !important;
+}
+/*.myblog-hover-text{
+  background: #000;
+  opacity: 0.6;
+  color: #FFF;
+}*/

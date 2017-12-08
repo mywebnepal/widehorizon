@@ -1,14 +1,71 @@
-1512733628a:1:{s:10:"notice.htm";a:9:{s:8:"fileName";s:10:"notice.htm";s:7:"content";s:194:"title = "notice"
+1512763119a:1:{s:10:"notice.htm";a:9:{s:8:"fileName";s:10:"notice.htm";s:7:"content";s:1507:"title = "notice"
 url = "/notice/:id"
 layout = "static-layout"
 is_hidden = 0
 ==
+use dipeshbanjade\noticeboard\Models\NoticeBoard;
+    function onStart()
+    {
+       $searchId = $this->param('id');
+       $notice = NoticeBoard::where('id', $searchId)->first();
+       $this['noticeData'] = $notice;
+    }
+?>
+==
 <div class="row">
 	<div class="container">
-          i am working or not just for testin purpose
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="notice-board" style="margin: 0 auto;">
+              	    {% if noticeData %}
+              	           {% if noticeData.noc_img %}
+                               <img src="{{ noticeData.noc_img.path }}" class="img img-responsive">
+              	           {% endif %}
+                           <dl>
+                           	   <dt><h3 class="title">{{ noticeData.noc_title }}</h3></dt><hr>
+                           	   <dd>
+	                           	   <p>
+	                           	   	{{ noticeData.noc_desc | raw }}
+	                           	   </p><hr>
+	                           	  <span class="text-left">Create At : &nbsp;{{ noticeData.noc_start_date }}</span>&nbsp;&nbsp;&nbsp;
+	                           	  <span class="text-right">End Date: &nbsp;{{ noticeData.noc_end_date }}</span>
+                           	   </dd>
+
+                           </dl>
+                           {% else %}
+                           <h3 class="title">Oops data not found</h3>
+              	    {% endif %}
+              </div>
+         </div>
 	</div>
-</div>";s:5:"mtime";i:1512628194;s:6:"markup";s:115:"<div class="row">
+</div>";s:5:"mtime";i:1512759462;s:6:"markup";s:1197:"<div class="row">
 	<div class="container">
-          i am working or not just for testin purpose
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="notice-board" style="margin: 0 auto;">
+              	    {% if noticeData %}
+              	           {% if noticeData.noc_img %}
+                               <img src="{{ noticeData.noc_img.path }}" class="img img-responsive">
+              	           {% endif %}
+                           <dl>
+                           	   <dt><h3 class="title">{{ noticeData.noc_title }}</h3></dt><hr>
+                           	   <dd>
+	                           	   <p>
+	                           	   	{{ noticeData.noc_desc | raw }}
+	                           	   </p><hr>
+	                           	  <span class="text-left">Create At : &nbsp;{{ noticeData.noc_start_date }}</span>&nbsp;&nbsp;&nbsp;
+	                           	  <span class="text-right">End Date: &nbsp;{{ noticeData.noc_end_date }}</span>
+                           	   </dd>
+
+                           </dl>
+                           {% else %}
+                           <h3 class="title">Oops data not found</h3>
+              	    {% endif %}
+              </div>
+         </div>
 	</div>
-</div>";s:4:"code";N;s:5:"title";s:6:"notice";s:3:"url";s:11:"/notice/:id";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}
+</div>";s:4:"code";s:224:"use dipeshbanjade\noticeboard\Models\NoticeBoard;
+    function onStart()
+    {
+       $searchId = $this->param('id');
+       $notice = NoticeBoard::where('id', $searchId)->first();
+       $this['noticeData'] = $notice;
+    }";s:5:"title";s:6:"notice";s:3:"url";s:11:"/notice/:id";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}

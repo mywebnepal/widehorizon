@@ -1,4 +1,4 @@
-1512733628a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:17305:"title = "home"
+1512763389a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:17426:"title = "home"
 url = "/"
 layout = "static-layout"
 is_hidden = 0
@@ -131,8 +131,7 @@ is_hidden = 0
           {% endif %}
           
         </div>
-        <div class="row">
-
+        <div class="row service-box"> 
           {% if home_data.com_servies %}
               {% for serData in home_data.com_servies %}
                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -289,7 +288,7 @@ is_hidden = 0
     <section id="faq">
       <div class="container wow fadeInUp">
          <div class="row">
-             <div class="col-sm-6">
+             <div class="col-sm-6 myfaq">
                <h3 class="title"><strong>Faq</strong> &nbsp;<small><i>Frequent ask question</i></small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
@@ -315,13 +314,14 @@ is_hidden = 0
                </div>
              <div class="col-md-6">
                  <h3 class="title">Blog &nbsp;&nbsp; <small><i>Latest new feedback</i></small></h3>
-                  <div class="row">
+                  <div class="row myblog">
                     {% if myblog %}
                         {% for myblog in myblog | slice(0,2) %}
                                 <div class="col-md-6">
                                     <div class="myblog">
-                                        <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
-                                        <div class="text-view transition">
+                                       <a href="blog/{{ myblog.slug }}"> <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
+                                        </a>
+                                        <div class="text-view transition myblog-hover-text">
                                             <h4>{{ myblog.title }}</h4>
                                         </div>
                                     </div>
@@ -355,7 +355,7 @@ is_hidden = 0
     <!--==========================
       Contact Section
     ============================-->
-  </main>";s:5:"mtime";i:1512719069;s:6:"markup";s:17233:"<main id="main">
+  </main>";s:5:"mtime";i:1512762763;s:6:"markup";s:17354:"<main id="main">
     <!--==========================
       About Us Section
     ============================-->
@@ -483,8 +483,7 @@ is_hidden = 0
           {% endif %}
           
         </div>
-        <div class="row">
-
+        <div class="row service-box"> 
           {% if home_data.com_servies %}
               {% for serData in home_data.com_servies %}
                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -641,7 +640,7 @@ is_hidden = 0
     <section id="faq">
       <div class="container wow fadeInUp">
          <div class="row">
-             <div class="col-sm-6">
+             <div class="col-sm-6 myfaq">
                <h3 class="title"><strong>Faq</strong> &nbsp;<small><i>Frequent ask question</i></small></h3>
                <div id="accordion">
                    {% if home_data.com_site_faq %}
@@ -667,13 +666,14 @@ is_hidden = 0
                </div>
              <div class="col-md-6">
                  <h3 class="title">Blog &nbsp;&nbsp; <small><i>Latest new feedback</i></small></h3>
-                  <div class="row">
+                  <div class="row myblog">
                     {% if myblog %}
                         {% for myblog in myblog | slice(0,2) %}
                                 <div class="col-md-6">
                                     <div class="myblog">
-                                        <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
-                                        <div class="text-view transition">
+                                       <a href="blog/{{ myblog.slug }}"> <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
+                                        </a>
+                                        <div class="text-view transition myblog-hover-text">
                                             <h4>{{ myblog.title }}</h4>
                                         </div>
                                     </div>

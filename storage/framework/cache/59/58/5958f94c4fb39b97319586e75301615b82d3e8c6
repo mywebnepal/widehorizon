@@ -1,4 +1,4 @@
-1512733769a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:4213:" <div class="topAddress">
+1512763505a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:4338:" <div class="topAddress">
     <div class="row">
          <div class="col-sm-5">
            <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -6,7 +6,7 @@
            <i class="fa fa-phone" aria-hidden="true"></i><span>{{ home_data.com_phone }} &nbsp;|&nbsp; {{ home_data.com_mob }}</span>
          </div>
          <div class="col-sm-3">
-           dipesh banjade
+           {{ home_data.com_slogon }}
          </div>
          <div class="col-sm-4">
            <div class="pull-right">
@@ -38,6 +38,8 @@
             </ul>
           </li>
           <li class="{% if this.page.url =='/recruitment' %}menu-active {%endif%}"><a href="{{'/recruitment'}}">Recruitment</a></li>
+
+          <li class="{% if this.page.url =='/jobs' %}menu-active {%endif%}"><a href="{{'/jobs'}}">Jobs</a></li>
 
           <li class="{% if this.page.url =='/services' %}menu-active {%endif%}"><a href="{{'/services'}}">Services</a></li>
 
@@ -87,7 +89,7 @@
                 </div>      
   </div>
 </div>
-{% endif %}";s:5:"mtime";i:1512733166;s:6:"markup";s:4212:"<div class="topAddress">
+{% endif %}";s:5:"mtime";i:1512762900;s:6:"markup";s:4337:"<div class="topAddress">
     <div class="row">
          <div class="col-sm-5">
            <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -95,7 +97,7 @@
            <i class="fa fa-phone" aria-hidden="true"></i><span>{{ home_data.com_phone }} &nbsp;|&nbsp; {{ home_data.com_mob }}</span>
          </div>
          <div class="col-sm-3">
-           dipesh banjade
+           {{ home_data.com_slogon }}
          </div>
          <div class="col-sm-4">
            <div class="pull-right">
@@ -127,6 +129,8 @@
             </ul>
           </li>
           <li class="{% if this.page.url =='/recruitment' %}menu-active {%endif%}"><a href="{{'/recruitment'}}">Recruitment</a></li>
+
+          <li class="{% if this.page.url =='/jobs' %}menu-active {%endif%}"><a href="{{'/jobs'}}">Jobs</a></li>
 
           <li class="{% if this.page.url =='/services' %}menu-active {%endif%}"><a href="{{'/services'}}">Services</a></li>
 

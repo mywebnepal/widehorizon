@@ -1,0 +1,6 @@
+plugin:
+    name: 'dipeshbanjade.application::lang.plugin.name'
+    description: 'dipeshbanjade.application::lang.plugin.description'
+    author: 'Dipesh Banjade'
+    icon: oc-icon-mail-forward
+    homepage: ''

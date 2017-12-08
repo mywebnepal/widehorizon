@@ -1,0 +1,28 @@
+title = "blog"
+url = "/blog/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+==
+{% set post = blogPost.post %}
+
+<div class="row">
+    <div class="container">
+        {% if post %}
+        <div class="col-sm-12">
+            <h2 align="center">{{ post.title }}</h2>
+                <p class="text-right">
+                    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;{{ post.category_id }}&nbsp;&nbsp;
+                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{ post.created_at|date('d F, Y') }}
+                </p>
+            </div><!--facebook share button-->
+            <img src="{{ myblog.featured_images[0].path }}"/>
+            <p>{{ post.content_html|raw }}</p>
+        </div>
+        {% else %}
+        {{ notFoundMessage }}
+        {% endif %}
+    </div>

@@ -1,0 +1,36 @@
+<div id="respon"></div>
+<form  data-request="application::onSend" id="applicationForm" data-toggle="validator" class="shake scroll-reveal" enctype="multipart/form-data">
+    <div class="form-group col-sm-6">
+        <input type="text" id="first_name" data-error="Name missing" style="display: none;">
+        <input type="text" class="form-control" name="fname" id="name" placeholder="Your name" required data-error="Name missing">
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group col-sm-6">
+        <input type="text" class="form-control" name="address" id="address" placeholder="Enter your full address" required data-error="Please fill address field first">
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group col-sm-6">
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter your phone number" required data-error="Phone number field should not be blank">
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group col-sm-6">
+        <input type="email" class="form-control" name="e_mail" id="email" placeholder="Your email" required>
+        <div class="help-block with-errors"></div>
+    </div>
+    <div class="form-group col-sm-12">
+        <textarea name="msg" id="message" class="form-control" rows="6" placeholder="Write your message with full details" required></textarea>
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <!-- <div class="form-group col-sm-6">
+        <input type="file" class="form-control" name="resume" id="resume" placeholder="select your cv">
+        <div class="help-block with-errors"></div>
+    </div> -->
+    <div class="col-sm-12">
+        <button type="submit" id="form-submit" class="btn btn-default btn-submit light-bg">SEND MESSAGE</button>
+    </div>
+    <div id="msgSubmit"></div>
+</form>

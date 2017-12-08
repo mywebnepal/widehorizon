@@ -9,75 +9,35 @@ pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
-categoryPage = "blog/category"
-postPage = "blog/post"
+categoryPage = "apply-job"
+postPage = "blog"
 ==
 {% set posts = blogPosts.posts %}
 
 {% if posts %}
     {% for myblog in posts %}
         <div class="row blog_div">
-            <div class="col-sm-4">
-                <div class="col-sm-12">
-                    featured_images[0].path
-                    <img src="{{ myblog.featured_images[0].path }}" width="100%" class="img img-thumbnail">
-                    }
-                </div>
-            </div><!--displaying image div-->
+           <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                            <img src="{{ myblog.featured_images[0].path }}" width="100%" class="img img-thumbnail">
+                    </div><!--displaying image div-->
 
-            <div class="col-sm-8"><!--content div-->
-                <div class="col-sm-12">
-                    <a href="{{ myblog.url }}"><h2>{{ myblog.title }}</h2></a><hr>
-                </div><!--heading column-->
-                <div class="col-sm-12">
-                    <p>
-                        {{ myblog.except }}
-                    </p>
-                </div><!--excerpt display column-->
-                <div class="col-sm-12 text-right">
-                    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;{{ myblog.category_id }}&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<time>{{ myblog.created_at|date('d F, Y') }}</time>
-                </div><!--date display column-->
-            </div><!--displaying content div-->
+                    <div class="col-sm-8"><!--content div-->
+                        <div class="col-sm-12">
+                            <a href="{{ myblog.url }}"><h2>{{ myblog.title }}</h2></a><hr>
+                        </div><!--heading column-->
+                        <div class="col-sm-12">
+                                <p class="excerpt">{{ myblog.summary|raw }}</p>
+                        </div><!--excerpt display column-->
+                        <div class="col-sm-12 text-right">
+                            <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;{{ myblog.category_id }}&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<time>{{ myblog.created_at|date('d F, Y') }}</time>
+                        </div><!--date display column-->
+                    </div><!--displaying content div-->
+                </div>
+           </div>
+           
         </div>
     {% endfor %}
-{% endif %}
-
-<ul class="post-list">
-    {% for post in posts %}
-        <li>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-
-            <p class="info">
-                Posted
-                {% if post.categories.count %} in {% endif %}
-                {% for category in post.categories %}
-                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-                on {{ post.published_at|date('M d, Y') }}
-            </p>
-
-            <p class="excerpt">{{ post.summary|raw }}</p>
-        </li>
-    {% else %}
-        <li class="no-data">{{ noPostsMessage }}</li>
-    {% endfor %}
-</ul>
-
-{% if posts.lastPage > 1 %}
-    <ul class="pagination">
-        {% if posts.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-        {% endif %}
-
-        {% for page in 1..posts.lastPage %}
-            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
-        {% endfor %}
-
-        {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
 {% endif %}
