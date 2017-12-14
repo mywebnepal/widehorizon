@@ -1,18 +1,18 @@
-1512763119a:1:{s:14:"site/style.htm";a:5:{s:8:"fileName";s:14:"site/style.htm";s:7:"content";s:735:" <link href="img/favicon.png" rel="icon">
+1513250251a:1:{s:14:"site/style.htm";a:5:{s:8:"fileName";s:14:"site/style.htm";s:7:"content";s:739:" <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
    <!-- Bootstrap CSS File -->
-  <link href="{{ 'assets/lib/bootstrap/css/bootstrap.css' |theme }}" rel="stylesheet">
+  <link href="{{ 'assets/lib/bootstrap/css/bootstrap.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/lib/font-awesome/css/font-awesome.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/lib/animate/animate.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/css/style.css' |theme }}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css">";s:5:"mtime";i:1512729677;s:6:"markup";s:734:"<link href="img/favicon.png" rel="icon">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css">";s:5:"mtime";i:1512904315;s:6:"markup";s:738:"<link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
    <!-- Bootstrap CSS File -->
-  <link href="{{ 'assets/lib/bootstrap/css/bootstrap.css' |theme }}" rel="stylesheet">
+  <link href="{{ 'assets/lib/bootstrap/css/bootstrap.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/lib/font-awesome/css/font-awesome.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/lib/animate/animate.min.css' |theme }}" rel="stylesheet">
   <link href="{{ 'assets/css/style.css' |theme }}" rel="stylesheet">

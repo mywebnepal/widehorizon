@@ -1,4 +1,4 @@
-1512763119a:1:{s:12:"services.htm";a:9:{s:8:"fileName";s:12:"services.htm";s:7:"content";s:217:"title = "services"
+1513271721a:1:{s:12:"services.htm";a:9:{s:8:"fileName";s:12:"services.htm";s:7:"content";s:515:"title = "services"
 url = "/services"
 layout = "static-layout"
 is_hidden = 0
@@ -6,14 +6,24 @@ is_hidden = 0
 <div class="row">
 	<div class="container">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-         services
+             {%  if home_data.com_servies %}
+                   {% for serData in home_data.com_servies %}
+                       <h3><strong>{{ serData.service_heading | raw }}</strong></h3><hr>
+                       <p>{{ serData.services_desc | raw }}</p>
+                  {% endfor %}
+             {% endif %}
          </div>
 	</div>
 </div>
-";s:5:"mtime";i:1512714722;s:6:"markup";s:137:"<div class="row">
+";s:5:"mtime";i:1512820929;s:6:"markup";s:435:"<div class="row">
 	<div class="container">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-         services
+             {%  if home_data.com_servies %}
+                   {% for serData in home_data.com_servies %}
+                       <h3><strong>{{ serData.service_heading | raw }}</strong></h3><hr>
+                       <p>{{ serData.services_desc | raw }}</p>
+                  {% endfor %}
+             {% endif %}
          </div>
 	</div>
 </div>";s:4:"code";N;s:5:"title";s:8:"services";s:3:"url";s:9:"/services";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}

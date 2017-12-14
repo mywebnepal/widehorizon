@@ -1,5 +1,4 @@
-1512763119a:1:{s:15:"site/script.htm";a:5:{s:8:"fileName";s:15:"site/script.htm";s:7:"content";s:923:"  <script src="{{'assets/lib/jquery/jquery.min.js'|theme }}"></script>
-  <script src="{{'assets/js/main.js'|theme }}"></script>
+1513251681a:1:{s:15:"site/script.htm";a:5:{s:8:"fileName";s:15:"site/script.htm";s:7:"content";s:852:"  <script src="{{'assets/js/main.js'|theme }}"></script>
   <script src="{{'assets/lib/jquery/jquery-migrate.min.js'|theme }}"></script>
   <script src="{{'assets/lib/bootstrap/js/bootstrap.bundle.min.js'|theme }}"></script>
   <script src="{{'assets/lib/easing/easing.min.js'|theme }}"></script>
@@ -13,8 +12,7 @@
   <!-- Contact Form JavaScript File -->
 
   <!-- Template Main Javascript File -->
-";s:5:"mtime";i:1512729659;s:6:"markup";s:920:"<script src="{{'assets/lib/jquery/jquery.min.js'|theme }}"></script>
-  <script src="{{'assets/js/main.js'|theme }}"></script>
+";s:5:"mtime";i:1513251072;s:6:"markup";s:849:"<script src="{{'assets/js/main.js'|theme }}"></script>
   <script src="{{'assets/lib/jquery/jquery-migrate.min.js'|theme }}"></script>
   <script src="{{'assets/lib/bootstrap/js/bootstrap.bundle.min.js'|theme }}"></script>
   <script src="{{'assets/lib/easing/easing.min.js'|theme }}"></script>

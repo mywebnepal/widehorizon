@@ -22,16 +22,22 @@ tabs:
         job_com_start_date:
             label: 'Start date'
             oc.commentPosition: ''
-            mode: datetime
+            mode: date
             span: left
             type: datepicker
             tab: 'Company Details'
         job_com_end_date:
             label: 'End date'
             oc.commentPosition: ''
-            mode: datetime
+            mode: date
             span: auto
             type: datepicker
+            tab: 'Company Details'
+        job_com_web:
+            label: 'Company website'
+            span: left
+            oc.commentPosition: ''
+            type: text
             tab: 'Company Details'
         job_details:
             label: 'Jobs details'

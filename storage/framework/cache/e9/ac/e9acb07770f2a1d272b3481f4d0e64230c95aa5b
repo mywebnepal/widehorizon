@@ -1,5 +1,113 @@
-1512763390a:1:{s:8:"jobs.htm";a:9:{s:8:"fileName";s:8:"jobs.htm";s:7:"content";s:70:"title = "Jobs"
+1513271721a:1:{s:8:"jobs.htm";a:9:{s:8:"fileName";s:8:"jobs.htm";s:7:"content";s:1913:"title = "Jobs"
 url = "/jobs"
 layout = "static-layout"
 is_hidden = 0
-==";s:5:"mtime";i:1512762071;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:4:"Jobs";s:3:"url";s:5:"/jobs";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}
+==
+use dipeshbanjade\jobdemand\Models\JobDemand;
+	function onStart()
+	{
+	$currentDate = date('Y-m-d');
+	$jobDemand = JobDemand::where('job_com_end_date', '>', $currentDate)->get();
+	$this['job'] = $jobDemand;
+		
+	}
+==
+
+<div class="row">
+	<div class="container">
+	    {% if job %}
+	    {% for job in job %}
+		<div class="col-md-12 col-sm-12 col-xs-12">
+		    <h3 class="title text-center">{{ job.job_com_name }}</h3><hr>
+		    <p class="text-right">Start Date: {{ job.job_com_start_date }}&nbsp;&nbsp; End Date: {{ job.job_com_end_date }}</p>
+		    <p>{{ job.job_com_desc | raw }}</p>
+
+		    <table class="table table-striped" width="100%">
+		        <thead>
+		        	<tr>
+		        		<th>sn</th>
+		        		<th>Title</th>
+		        		<th>Description</th>
+		        		<th>Duration</th>
+		        		<th>Facilities</th>
+		        	</tr>
+		        </thead>
+		        <tbody>
+		            {% if job.job_details %}
+                         {% for jobdetail in job.job_details %}
+                             <tr>
+                             	<td>1. </td>
+                             	<td>{{ jobdetail.job_title | raw }}</td>
+                             	<td>{{ jobdetail.job_desc | raw }}</td>
+                             	<td>{{ jobdetail.job_duration }}</td>
+                             	<td>{{ jobdetail.job_facilities }}</td>
+                             </tr>
+                         {% endfor %}
+                         {% else %}
+                         <h3 align="text-center">Oops no record found</h3>
+		            {% endif %}
+		        	
+		        </tbody>
+		    </table>
+		    <p class="text-right"><a href="{{ '/apply-job' }}"><button class="btn btn-primary">Apply Now</button></a></p>
+
+
+		</div>
+		{% endfor %}
+		   {% else %}
+		     <h3 class="text-center">Ooops job is not available now...</h3>
+		{% endif %}
+	</div>
+</div>";s:5:"mtime";i:1512835824;s:6:"markup";s:1626:"<div class="row">
+	<div class="container">
+	    {% if job %}
+	    {% for job in job %}
+		<div class="col-md-12 col-sm-12 col-xs-12">
+		    <h3 class="title text-center">{{ job.job_com_name }}</h3><hr>
+		    <p class="text-right">Start Date: {{ job.job_com_start_date }}&nbsp;&nbsp; End Date: {{ job.job_com_end_date }}</p>
+		    <p>{{ job.job_com_desc | raw }}</p>
+
+		    <table class="table table-striped" width="100%">
+		        <thead>
+		        	<tr>
+		        		<th>sn</th>
+		        		<th>Title</th>
+		        		<th>Description</th>
+		        		<th>Duration</th>
+		        		<th>Facilities</th>
+		        	</tr>
+		        </thead>
+		        <tbody>
+		            {% if job.job_details %}
+                         {% for jobdetail in job.job_details %}
+                             <tr>
+                             	<td>1. </td>
+                             	<td>{{ jobdetail.job_title | raw }}</td>
+                             	<td>{{ jobdetail.job_desc | raw }}</td>
+                             	<td>{{ jobdetail.job_duration }}</td>
+                             	<td>{{ jobdetail.job_facilities }}</td>
+                             </tr>
+                         {% endfor %}
+                         {% else %}
+                         <h3 align="text-center">Oops no record found</h3>
+		            {% endif %}
+		        	
+		        </tbody>
+		    </table>
+		    <p class="text-right"><a href="{{ '/apply-job' }}"><button class="btn btn-primary">Apply Now</button></a></p>
+
+
+		</div>
+		{% endfor %}
+		   {% else %}
+		     <h3 class="text-center">Ooops job is not available now...</h3>
+		{% endif %}
+	</div>
+</div>";s:4:"code";s:211:"use dipeshbanjade\jobdemand\Models\JobDemand;
+	function onStart()
+	{
+	$currentDate = date('Y-m-d');
+	$jobDemand = JobDemand::where('job_com_end_date', '>', $currentDate)->get();
+	$this['job'] = $jobDemand;
+		
+	}";s:5:"title";s:4:"Jobs";s:3:"url";s:5:"/jobs";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}

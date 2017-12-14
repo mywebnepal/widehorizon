@@ -32,9 +32,9 @@
           <li class="menu-has-children"><a href="">Aboutus</a>
             <ul>
               <li class="menu-has-children"><a href="{{'/aboutus'}}">Our Company</a> </li>
-              <li class="{% if this.page.url =='/' %}menu-active {%endif%}"><a href="#">Message from chairman</a></li>
-              <li><a href="#">License & Certificates</a></li>
-              <li><a href="#">Horizon Group</a></li>
+              <li class="{% if this.page.url =='/chairman-message' %}menu-active {%endif%}"><a href="{{ '/chairman-message' }}">Message from chairman</a></li>
+              <li class="{% if this.page.url =='/license-certificat' %}menu-active {%endif%}"><a href="{{ '/license-certificate' }}">License & Certificates</a></li>
+              <li class="{% if this.page.url =='/our-group' %}menu-active {%endif%}"><a href="{{ '/our-group' }}">Horizon Group</a></li>
             </ul>
           </li>
           <li class="{% if this.page.url =='/recruitment' %}menu-active {%endif%}"><a href="{{'/recruitment'}}">Recruitment</a></li>

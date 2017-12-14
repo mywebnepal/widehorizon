@@ -11,6 +11,7 @@ use rainlab\blog\Models\Post;
        $currentDate = date('Y-m-d');
        $data = CompanySetting::first();
        $this['home_data'] = $data;
+
        $notice = NoticeBoard::where('noc_end_date', '>', $currentDate)->get();
        $this['noticeData'] = $notice;
 
@@ -28,7 +29,17 @@ use rainlab\blog\Models\Post;
   <meta name="description" content="{{ this.page.meta_description }}">
   <meta name="title" content="{{ this.page.meta_title }}">
   <meta name="author" content="Dipesh Banjade">
-   {% partial 'site/style' %}
+  <link href="img/favicon.png" rel="icon">
+   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+   <link href="{{ 'assets/lib/bootstrap/css/bootstrap.min.css' |theme }}" rel="stylesheet">
+   <link href="{{ 'assets/lib/font-awesome/css/font-awesome.min.css' |theme }}" rel="stylesheet">
+   <link href="{{ 'assets/lib/animate/animate.min.css' |theme }}" rel="stylesheet">
+   <link href="{{ 'assets/css/style.css' |theme }}" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
    {% styles %}
 </head>
 
@@ -68,12 +79,24 @@ use rainlab\blog\Models\Post;
   ============================-->
   
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Contact Form JavaScript File -->
-   {% partial 'site/script' %}
+  <script src="{{'assets/lib/jquery/jquery.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/bootstrap/js/bootstrap.min.js'|theme }}"></script>
+
+  <script src="{{'assets/js/main.js'|theme }}"></script>
+  <script src="{{'assets/lib/jquery/jquery-migrate.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/bootstrap/js/bootstrap.bundle.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/easing/easing.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/wow/wow.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/waypoints/waypoints.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/counterup/counterup.min.js'|theme }}"></script>
+  <script src="{{'assets/lib/superfish/hoverIntent.js'|theme }}"></script>
+  <script src="{{'assets/lib/superfish/superfish.min.js'|theme }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <!-- Scripts -->
         {% framework extras %}
         {% scripts %}
 
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>

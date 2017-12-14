@@ -4,19 +4,15 @@ layout = "static-layout"
 is_hidden = 0
 ==
 <main id="main">
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section>
+    <section class="section-greeting">
         <div class="container">
               <div class="row welcome-section">
-                <div class="col-sm-7 col-md-7 wow fadeInUp">
-                  <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2>
+                <div class="col-sm-7 wow fadeInUp welcome-greeting">
+                  <h2 class="title">{{ home_data.com_welcome_msg_heading |raw }}</h2><hr>
                   <p>{{ home_data.com_welcome_msg | raw }}</p>
                 </div>
                 <!--  -->
-
-                <div class="col-sm-5 col-md-5 wow fadeInRight">
+                <div class="col-sm-5  wow fadeInRight div-notice">
                   <div id="noticeBoard">
                      {% if noticeData %}
                       {% for notice in noticeData %}
@@ -43,10 +39,8 @@ is_hidden = 0
                               </small>
                             </p>
                             <p class="pull-right">
-                              
                               <a href="/notice/{{ notice.id }}" class="btn btn-primary btn-sm pull-right">Read More..</a>
                             </li>
-                              
                             </p> 
                           </ul>
                         </div>
@@ -66,16 +60,17 @@ is_hidden = 0
                            <li><h2>Notice Board3</h2></li>
                            <li><img class="img img-thumbnail" src="{{ 'assets/img/team-3.jpg' | theme }}" alt="Card image" height="100px"></li>
                            <li><p>Demo testing for new feedback tools</p></li>
-                           <li>Date   <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a></li>
+                           <li>Date   
+                           <a href="#" class="btn btn-primary btn-sm pull-right">Read More..</a>
+                           </li>
                          </ul>
                        </div>
                        {% endif %}
-                    
                   </div>
                 </div>
-                
               </div>
-      </div>
+        </div>
+        <div class="clearfix"></div>
     </section>
          
 
@@ -84,7 +79,7 @@ is_hidden = 0
           <h3 class="cta-title text-center"><em>Why with us</em></h3>
           <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqueSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 ">
             <h4 class="cta-title text-left">We focus in</h4>
             <ul class="why-with-us">
               {% if home_data.com_focus_port %}
@@ -94,7 +89,7 @@ is_hidden = 0
               {% endif %}
             </ul>
           </div>
-           <div class="col-lg-4">
+           <div class="col-sm-4">
             <h4 class="cta-title text-left">Our Countries</h4>
              <ul class="why-with-us">
                  <li class="tick">Dubai</li>
@@ -106,13 +101,20 @@ is_hidden = 0
              </ul>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-sm-4">
             <h3 class="cta-title text-center">Our strong point</h3>
-
+             <ul class="why-with-us">
+               <li>test one two three</li>
+               <li>test one two three</li>
+               <li>test one two three</li>
+               <li>test one two three</li>
+               <li>test one two three</li>
+             </ul>
             
           </div>
         </div>
       </div>
+      <div class="clearfix"></div>
     </section><!-- #call-to-action -->
 
     <!--==========================
@@ -134,156 +136,62 @@ is_hidden = 0
         <div class="row service-box"> 
           {% if home_data.com_servies %}
               {% for serData in home_data.com_servies %}
-                   <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                   <div class="col-sm-4 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                      <div class="box">
-                       <div class="icon"><a href=""><i class="fa {{ serData.services_icon }}"></i></a></div>
-                       <h4 ><a href="">{{ serData.service_heading | raw }}</a></h4>
+                       <div class="icon"><a href="{{ '/services' }}"><i class="fa {{ serData.services_icon }}"></i></a></div>
+                       <h4 ><a href="{{ '/services' }}">{{ serData.service_heading | raw }}</a></h4>
                        <p>{{ str_limit(serData.services_desc, 150) | raw }}</p>
                      </div>
                    </div>
               {% endfor %}
-                {% else %}
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                  </div>
-                </div>
-
-
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="box">
-                    <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
-                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                  </div>
-                </div>
           {% endif %}
         </div>
 
       </div>
+      <div class="clearfix"></div>
     </section><!-- #services -->
+
+
+    
 
     <!--==========================
     Call To Action Section
     ============================-->
-    
-    <section id="team">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h3 class="section-title">Team</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-        <div class="row">
 
-          {% if home_data.com_staff_details %}
-               {% for  teamData in home_data.com_staff_details %}
-                   <div class="col-lg-3 col-md-6">
-                     <div class="member">
-                       <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
-                       <h4>{{ teamData.com_staff_name }}</h4>
-                       <span>{{ teamData.com_staff_degination }}</span>
-                       <div class="social">
-                         <a href="{{ teamData.com_staff_twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
-                         <a href="{{ teamData.com_staff_fb }}" target="_blank"><i class="fa fa-facebook"></i></a>
-                         <a href="{{ teamData.com_staff_linkin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+    <section class="site-team">
+      <div class="container wow fadeInUp">
+          <div class="row">
+            <div class="col-sm-12 pull-center">
+                <h3>Team reponsive testing</h3>
+            </div>
+
+            <div class="col-sm-12">
+                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            </div>
+
+            {% if home_data.com_staff_details %}
+                 {% for  teamData in home_data.com_staff_details %}
+                     <div class="col-sm-3 col-md-3">
+                       <div class="card">
+                        
+                        <img src="{{ 'assets/img/team-1.jpg' |theme }}" alt="" class="img img-thumbnail img-responsive">
+                         <h4>{{ teamData.com_staff_name }}</h4>
+                         <span>{{ teamData.com_staff_degination }}</span>
+                         <div class="social">
+                           <a href="{{ teamData.com_staff_twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                           <a href="{{ teamData.com_staff_fb }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                           <a href="{{ teamData.com_staff_linkin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                         </div>
                        </div>
                      </div>
-                   </div>
-               {% endfor %}
-               {% else %}
-                  <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                      <div class="pic"><img src="{{ 'assets/img/team-1.jpg' |theme }}" alt=""></div>
-                      <h4>Walter White</h4>
-                      <span>Chief Executive Officer</span>
-                      <div class="social">
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-google-plus"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
+                 {% endfor %}
+            {% endif %}
 
-                  <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                      <div class="pic"><img src="{{ 'assets/img/team-2.jpg' |theme }}" alt=""></div>
-                      <h4>Sarah Jhinson</h4>
-                      <span>Product Manager</span>
-                      <div class="social">
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-google-plus"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                      <div class="pic"><img src="{{ 'assets/img/team-3.jpg' |theme }}" alt=""></div>
-                      <h4>William Anderson</h4>
-                      <span>CTO</span>
-                      <div class="social">
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-google-plus"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                      <div class="pic"><img src="{{ 'assets/img/team-4.jpg' |theme }}" alt=""></div>
-                      <h4>Amanda Jepson</h4>
-                      <span>Accountant</span>
-                      <div class="social">
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-google-plus"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-          {% endif %}
-          
-        </div>
-
+          </div>
+        
       </div>
-    </section><!-- #team -->
+      <div class="clearfix"></div>
+    </section>
 
     <section id="faq">
       <div class="container wow fadeInUp">
@@ -317,7 +225,7 @@ is_hidden = 0
                   <div class="row myblog">
                     {% if myblog %}
                         {% for myblog in myblog | slice(0,2) %}
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-xs-6">
                                     <div class="myblog">
                                        <a href="blog/{{ myblog.slug }}"> <img src="{{ myblog.featured_images[0].path }}" class="img-responsive transition">
                                         </a>
@@ -329,7 +237,7 @@ is_hidden = 0
                                 
                         {% endfor %}
                     {% else %}
-                       <div class="col-md-6">
+                       <div class="col-sm-6 col-md-6 col-xs-6">
                            <div class="myblog">
                                <img src="http://placehold.it/350x150" class="img-responsive transition">
                                <div class="text-view transition">
@@ -337,7 +245,7 @@ is_hidden = 0
                                </div>
                            </div>
                        </div>
-                       <div class="col-md-6">
+                       <div class="col-sm-6 col-md-6 col-xs-6">
                            <div class="myblog">
                                <img src="http://placehold.it/350x150" class="img-responsive transition">
                                <div class="text-view transition">

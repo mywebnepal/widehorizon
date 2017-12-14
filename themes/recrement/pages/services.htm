@@ -6,7 +6,12 @@ is_hidden = 0
 <div class="row">
 	<div class="container">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-         services
+             {%  if home_data.com_servies %}
+                   {% for serData in home_data.com_servies %}
+                       <h3><strong>{{ serData.service_heading | raw }}</strong></h3><hr>
+                       <p>{{ serData.services_desc | raw }}</p>
+                  {% endfor %}
+             {% endif %}
          </div>
 	</div>
 </div>
